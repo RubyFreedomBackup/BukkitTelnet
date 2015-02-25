@@ -109,7 +109,7 @@ public final class ClientSession extends Thread
                 return;
             }
 
-            writeLine("Closing connection...");
+            writeLine("Closing connection to the server...");
             try
             {
                 clientSocket.close();
@@ -160,7 +160,7 @@ public final class ClientSession extends Thread
 
     public void writeLine(String message)
     {
-        printRawLine("[" + (username.isEmpty() ? "" : username + "@") + "BukkitTelnet]$ " + message);
+        printRawLine("[" + (username.isEmpty() ? "" : username + "@") + "BukkitTelnetv4.2]$ " + message);
     }
 
     public void flush()
