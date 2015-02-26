@@ -49,7 +49,7 @@ public final class ClientSession extends Thread
         this.filterMode = FilterMode.FULL;
         this.hasTerminated = false;
 
-        TelnetLogger.info("Client connected: " + clientAddress);
+        TelnetLogger.info("WARNING: Client connected: " + clientAddress);
     }
 
     @Override
@@ -70,7 +70,7 @@ public final class ClientSession extends Thread
             return;
         }
 
-        writeLine("Session Started.");
+        writeLine("Session Started on the selected server.");
 
         if (!authenticate())
         {
@@ -160,7 +160,7 @@ public final class ClientSession extends Thread
 
     public void writeLine(String message)
     {
-        printRawLine("[" + (username.isEmpty() ? "" : username + "@") + "BukkitTelnetv4.2]$ " + message);
+        printRawLine("[" + (username.isEmpty() ? "" : username + "@") + "BukkitTelnetv4.3]$ " + message);
     }
 
     public void flush()
